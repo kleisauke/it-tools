@@ -1,6 +1,9 @@
+run: build
+	node --experimental-wasm-anyref shell.js
+.PHONY: run
+
 serve: build
 	emrun --no_browser --port 8080 .
-.PHONY: serve
 
 build: out out/fizzbuzz.js
 

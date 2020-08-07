@@ -39,6 +39,7 @@ mergeInto(LibraryManager.library, {
         return str;
     },
 
+    $readITValue__deps: ['$readITString'],
     $readITValue: function(ptr) {
         var str = readITString(ptr);
         return Module["asm"][str];

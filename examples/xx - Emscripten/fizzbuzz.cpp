@@ -30,8 +30,8 @@ const char *fizzStr() {
 }
 
 void EMSCRIPTEN_KEEPALIVE fizzbuzz(int n) {
-    const char *fizz = fizzStr();
-    const char *buzz = buzzStr();
+	auto fizz = fizzStr();
+	auto buzz = buzzStr();
     for (int i = 1; i <= n; ++i) {
         if (isFizz(i) && isBuzz(i)) {
             it_log("Fizzier Buzz");
@@ -47,7 +47,7 @@ void EMSCRIPTEN_KEEPALIVE fizzbuzz(int n) {
 
 // Helper functions used in adapters
 __attribute__((export_name("_it_strlen")))
-int it_strlen(const char *str) {
+int _it_strlen(const char *str) {
     int len = 0;
     while (*str++)
         len++;
