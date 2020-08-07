@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Kleis Auke Wolthuizen <github@kleisauke.nl>
+Date: Fri, 7 Aug 2020 14:30:00 +0200
+Subject: [PATCH 1/1] Pass --enable-reference-types to Binaryen feature flags
+
+
+diff --git a/tools/building.py b/tools/building.py
+index 1111111..2222222 100644
+--- a/tools/building.py
++++ b/tools/building.py
+@@ -1624,7 +1624,7 @@ def emit_wasm_source_map(wasm_file, map_file):
+ 
+ def get_binaryen_feature_flags():
+   # start with the MVP features, add the rest as needed
+-  ret = ['--mvp-features']
++  ret = ['--mvp-features', '--enable-reference-types']
+   if Settings.USE_PTHREADS:
+     ret += ['--enable-threads']
+   ret += Settings.BINARYEN_FEATURES
+
